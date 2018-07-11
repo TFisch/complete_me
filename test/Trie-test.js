@@ -2,22 +2,21 @@ import { expect } from 'chai';
 import Node from '../lib/Node'
 import Trie from '../lib/Trie'
 
-describe('NODE', () => {
-  let node;
+describe('Trie', () => {
+  let trie;
 
   beforeEach(() => {
-    node = new Node('pizza');
+    trie = new Trie();
+  });
+
+  it('should start with zero elements', () => {
+    expect(trie.length).to.eq(0);
+  });
+
+  it('should set its default root to null', () => {
+    expect(trie.root).to.eq(null);
   })
 
-  it('should exist', () => {
-    expect(node).to.exist;
-  })
 
-  it('should default next to null', () => {
-    expect(node.next).to.equal(null);
-  })
-
-  it('should take data and assign it to data prop', () => {
-    expect(node.data).to.equal('pizza');
-  })
 })
+
