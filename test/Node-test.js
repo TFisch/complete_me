@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Node from '../lib/Node'
-import Trie from '../lib/Trie'
+import Trie from '../lib/NameTrie'
 
 describe('NODE', () => {
   let node;
