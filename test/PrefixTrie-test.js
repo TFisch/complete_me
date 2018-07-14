@@ -27,6 +27,7 @@ describe('Trie', () => {
       trie.insert('horse');
       trie.insert('gopher');
       trie.insert('goat');
+      trie.insert('goal');
       trie.insert('telephone');
       console.log(JSON.stringify(trie, null, 4));
       expect(trie.count).to.equal(4);
@@ -34,23 +35,15 @@ describe('Trie', () => {
 
   })
   
-  
-  
-  
-  
-  
-  
   describe('insert', () => {
-    it.skip('should be able to add a node to the Trie', () => {
+    it('should be able to add a node to the Trie', () => {
       trie.insert('d');
-
-      expect(trie.rootNode.letter).to.equal('d');
+      expect(trie.rootNode.children).to.equal('d');
     });
   
     it.skip('should enter the letters of the word to the trie as children', () => {
       const node = Node
       trie.insert('dog');
-      console.log(trie.rootNode);
       expect(trie.rootNode.children).to.equal('d');
       expect(trie.rootNode.children.d.children).to.equal('o');
       expect(trie.rootNode.children.d.children.o.children).to.equal('g');

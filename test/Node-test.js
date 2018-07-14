@@ -9,15 +9,8 @@ describe('NODE', () => {
     node = new Node('pizza');
   })
 
-  it.skip('should exist', () => {
+  it('should exist', () => {
     expect(node).to.exist;
   })
 
-  it.skip('should default next to null', () => {
-    expect(node.next).to.equal(null);
-  })
-
-  it.skip('should take data and assign it to data prop', () => {
-    expect(node.data).to.equal('pizza');
-  })
 })
