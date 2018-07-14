@@ -23,13 +23,11 @@ describe('Trie', () => {
       expect(trie.count).to.equal(0);
     })
 
-    it.only('should keep count of multiple words entered', () => {
+    it('should keep count of multiple words entered', () => {
       trie.insert('horse');
       trie.insert('gopher');
-      trie.insert('goat');
       trie.insert('goal');
       trie.insert('telephone');
-      console.log(JSON.stringify(trie, null, 4));
       expect(trie.count).to.equal(4);
     })
 
@@ -51,5 +49,37 @@ describe('Trie', () => {
     })
   
   })  
+
+  describe('suggest', () => {
+    it('should have a suggest method', () => {
+
+      trie.suggest('pi');
+      expect(trie).respondsTo('suggest');
+    });
+    
+    it('should take in a prefix', () => {
+      trie.suggest('pi');
+      expect(trie).respondsTo('suggest');
+    })
+    
+    it('should return an empty array if there are no words containing that prefix', () => {
+      trie.insert('cook');
+      trie.insert('cane');
+
+      expect(trie.suggest('cx')).to.deep.equal([]);
+    })
+  
+    it.only('should return an array of all the words containing a prefix', () => {
+      trie.insert('corny');
+      trie.insert('cords');
+      trie.insert('cents');
+      trie.insert('call');
+
+      expect(trie.suggest('c')).to.deep.equal(['corny', 'cords', 'cents', 'call']);
+
+    })
+  
+  
+  }) 
 })
 
