@@ -11,7 +11,6 @@ describe('Trie', () => {
   });
 
 
-
   describe('count', () => {
     it('should keep count of how many words have been inserted', () => {
       trie.insert('breakfast');
@@ -44,6 +43,8 @@ describe('Trie', () => {
     it('should enter the letters of the word to the trie as children', () => {
       const node = Node
       trie.insert('dog');
+      console.log(JSON.stringify(trie, null, 4));
+
       expect(trie.rootNode.children).to.equal('d');
       expect(trie.rootNode.children.d.children).to.equal('o');
       expect(trie.rootNode.children.d.children.o.children).to.equal('g');
