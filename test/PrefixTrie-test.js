@@ -12,13 +12,13 @@ describe('Trie', () => {
 
 
   describe('count', () => {
-    it('should keep count of how many words have been inserted', () => {
+    it.skip('should keep count of how many words have been inserted', () => {
       trie.insert('breakfast');
 
       expect(trie.count).to.equal(1);
     })
 
-    it('should equal zero, if nothing has been inserted', () => {
+    it.skip('should equal zero, if nothing has been inserted', () => {
       
       expect(trie.count).to.equal(0);
     })
