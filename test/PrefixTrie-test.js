@@ -28,6 +28,8 @@ describe('Trie', () => {
       trie.insert('gopher');
       trie.insert('goal');
       trie.insert('telephone');
+      console.log(JSON.stringify(trie, null, 4));
+
       expect(trie.count).to.equal(4);
     })
 
@@ -36,12 +38,14 @@ describe('Trie', () => {
   describe('insert', () => {
     it('should be able to add a node to the Trie', () => {
       trie.insert('d');
+
       expect(trie.rootNode.children).to.equal('d');
     });
   
-    it.skip('should enter the letters of the word to the trie as children', () => {
+    it('should enter the letters of the word to the trie as children', () => {
       const node = Node
       trie.insert('dog');
+
       expect(trie.rootNode.children).to.equal('d');
       expect(trie.rootNode.children.d.children).to.equal('o');
       expect(trie.rootNode.children.d.children.o.children).to.equal('g');
@@ -51,7 +55,7 @@ describe('Trie', () => {
   })  
 
   describe('suggest', () => {
-    it('should have a suggest method', () => {
+    it.only ('should have a suggest method', () => {
 
       trie.suggest('pi');
       expect(trie).respondsTo('suggest');
@@ -76,10 +80,9 @@ describe('Trie', () => {
       trie.insert('call');
 
       expect(trie.suggest('c')).to.deep.equal(['corny', 'cords', 'cents', 'call']);
-
     })
-  
-  
+
+    it('should not return words that have ')
   }) 
 })
 
