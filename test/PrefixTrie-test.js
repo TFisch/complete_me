@@ -95,6 +95,15 @@ describe('Trie', () => {
 
       expect(trie.count).to.eq(235886);
     })
+    
+    it.only('should list words that match suggestions', () => {
+      const text = "/usr/share/dict/words";
+      const dictionary = fs.readFileSync(text).toString().trim().split('\n');
+
+      trie.populate(dictionary);
+      expect(trie.suggest('frontie')).to.deep.equal(['frontier', 'frontierlike', 'frontierman', 'frontiersman']);
+    })
+
   }) 
 
 
