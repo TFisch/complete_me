@@ -2,6 +2,8 @@ require("locus")
 import { expect } from 'chai';
 import Node from '../lib/Node';
 import PrefixTrie from '../lib/PrefixTrie';
+import fs from 'fs';
+
 
 describe('Trie', () => {
   let trie;
@@ -42,7 +44,7 @@ describe('Trie', () => {
       expect(trie.rootNode.children).to.equal('d');
     });
   
-    it.only('should enter the letters of the word to the trie as children', () => {
+    it('should enter the letters of the word to the trie as children', () => {
       trie.insert('dog');
 
       expect(trie.rootNode.children).to.be.an('object');
@@ -83,5 +85,19 @@ describe('Trie', () => {
 
     it('should not return words that have ')
   }) 
+
+  describe('populate', () => {
+    it.only('should add in a very large dictionary of words', () => {
+      const text = "/usr/share/dict/words";
+      const dictionary = fs.readFileSync(text).toString().trim().split('\n');
+
+      trie.populate(dictionary);
+
+      expect(trie.count).to.eq(235886);
+    })
+  }) 
+
+
+
 })
 
