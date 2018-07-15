@@ -42,20 +42,19 @@ describe('Trie', () => {
       expect(trie.rootNode.children).to.equal('d');
     });
   
-    it('should enter the letters of the word to the trie as children', () => {
-      const node = Node
+    it.only('should enter the letters of the word to the trie as children', () => {
       trie.insert('dog');
 
-      expect(trie.rootNode.children).to.equal('d');
-      expect(trie.rootNode.children.d.children).to.equal('o');
-      expect(trie.rootNode.children.d.children.o.children).to.equal('g');
+      expect(trie.rootNode.children).to.be.an('object');
+      expect(trie.rootNode.children.d.children).to.be.an('object');
+      expect(trie.rootNode.children.d.children.o.children).to.be.an('object');
 
     })
   
   })  
 
   describe('suggest', () => {
-    it.only ('should have a suggest method', () => {
+    it('should have a suggest method', () => {
 
       trie.suggest('pi');
       expect(trie).respondsTo('suggest');
@@ -73,7 +72,7 @@ describe('Trie', () => {
       expect(trie.suggest('cx')).to.deep.equal([]);
     })
   
-    it.only('should return an array of all the words containing a prefix', () => {
+    it('should return an array of all the words containing a prefix', () => {
       trie.insert('corny');
       trie.insert('cords');
       trie.insert('cents');
