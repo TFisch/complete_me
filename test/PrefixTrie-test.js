@@ -30,7 +30,6 @@ describe('Trie', () => {
       trie.insert('gopher');
       trie.insert('goal');
       trie.insert('telephone');
-      console.log(JSON.stringify(trie, null, 4));
 
       expect(trie.count).to.equal(4);
     })
@@ -41,7 +40,7 @@ describe('Trie', () => {
     it('should be able to add a node to the Trie', () => {
       trie.insert('d');
 
-      expect(trie.rootNode.children).to.equal('d');
+      expect(trie.rootNode.children).to.be.an('object');
     });
   
     it('should enter the letters of the word to the trie as children', () => {
@@ -82,12 +81,10 @@ describe('Trie', () => {
 
       expect(trie.suggest('c')).to.deep.equal(['corny', 'cords', 'cents', 'call']);
     })
-
-    it('should not return words that have ')
   }) 
 
   describe('populate', () => {
-    it.only('should add in a very large dictionary of words', () => {
+    it('should add in a very large dictionary of words', () => {
       const text = "/usr/share/dict/words";
       const dictionary = fs.readFileSync(text).toString().trim().split('\n');
 
@@ -96,7 +93,7 @@ describe('Trie', () => {
       expect(trie.count).to.eq(235886);
     })
     
-    it.only('should list words that match suggestions', () => {
+    it('should list words that match suggestions', () => {
       const text = "/usr/share/dict/words";
       const dictionary = fs.readFileSync(text).toString().trim().split('\n');
 
