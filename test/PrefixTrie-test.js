@@ -77,6 +77,7 @@ describe('Trie', () => {
       trie.insert('cords');
       trie.insert('cents');
       trie.insert('call');
+      console.log(JSON.stringify(trie, null, 4));
 
       expect(trie.suggest('c')).to.deep.equal(['corny', 'cords', 'cents', 'call']);
     })
