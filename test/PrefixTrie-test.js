@@ -58,7 +58,6 @@ describe('Trie', () => {
     it('should have a suggest method', () => {
 
       trie.suggest('pi');
-      expect(trie).respondsTo('suggest');
     });
     
     it('should take in a prefix', () => {
@@ -84,7 +83,7 @@ describe('Trie', () => {
   }) 
 
   describe('populate', () => {
-    it('should add in a very large dictionary of words', () => {
+    it('should be able to take in a large source of words', () => {
       const text = "/usr/share/dict/words";
       const dictionary = fs.readFileSync(text).toString().trim().split('\n');
 
