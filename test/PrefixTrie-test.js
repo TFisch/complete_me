@@ -1,4 +1,4 @@
-require("locus")
+require("locus");
 import { expect } from 'chai';
 import Node from '../lib/Node';
 import PrefixTrie from '../lib/PrefixTrie';
@@ -18,12 +18,12 @@ describe('Trie', () => {
       trie.insert('breakfast');
 
       expect(trie.count).to.equal(1);
-    })
+    });
 
     it('should equal zero, if nothing has been inserted', () => {
       
       expect(trie.count).to.equal(0);
-    })
+    });
 
     it('should keep count of multiple words entered', () => {
       trie.insert('horse');
@@ -32,9 +32,9 @@ describe('Trie', () => {
       trie.insert('telephone');
 
       expect(trie.count).to.equal(4);
-    })
+    });
 
-  })
+  });
   
   describe('insert', () => {
     it('should be able to add a node to the Trie', () => {
@@ -49,10 +49,9 @@ describe('Trie', () => {
       expect(trie.rootNode.children).to.be.an('object');
       expect(trie.rootNode.children.d.children).to.be.an('object');
       expect(trie.rootNode.children.d.children.o.children).to.be.an('object');
-
-    })
+    });
   
-  })  
+  });  
 
   describe('suggest', () => {
     it('should have a suggest method', () => {
@@ -63,14 +62,14 @@ describe('Trie', () => {
     it('should take in a prefix', () => {
       trie.suggest('pi');
       expect(trie).respondsTo('suggest');
-    })
+    });
     
     it('should return an empty array if there are no words containing that prefix', () => {
       trie.insert('cook');
       trie.insert('cane');
 
       expect(trie.suggest('cx')).to.deep.equal([]);
-    })
+    });
   
     it('should return an array of all the words containing a prefix', () => {
       trie.insert('corny');
@@ -79,8 +78,8 @@ describe('Trie', () => {
       trie.insert('call');
 
       expect(trie.suggest('c')).to.deep.equal(['corny', 'cords', 'cents', 'call']);
-    })
-  }) 
+    });
+  }); 
 
   describe('populate', () => {
     it('should be able to take in a large source of words', () => {
@@ -90,7 +89,7 @@ describe('Trie', () => {
       trie.populate(dictionary);
 
       expect(trie.count).to.eq(235886);
-    })
+    });
     
     it('should list words that match suggestions', () => {
       const text = "/usr/share/dict/words";
@@ -98,11 +97,11 @@ describe('Trie', () => {
 
       trie.populate(dictionary);
       expect(trie.suggest('frontie')).to.deep.equal(['frontier', 'frontierlike', 'frontierman', 'frontiersman']);
-    })
+    });
 
-  }) 
+  }); 
 
 
 
-})
+});
 
