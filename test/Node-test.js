@@ -13,4 +13,8 @@ describe('NODE', () => {
     expect(node).to.exist;
   })
 
+  it('should have an empty object for a children property', () => {
+    expect(node.children).to.be.an('object');
+    ;
+  })
 })
