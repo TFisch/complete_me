@@ -15,6 +15,9 @@ describe('NODE', () => {
 
   it('should have an empty object for a children property', () => {
     expect(node.children).to.be.an('object');
-    ;
+  })
+
+  it('should have an endOfWord property, set to false', () => {
+    expect(node.endOfWord).to.equal(false);
   })
 })
