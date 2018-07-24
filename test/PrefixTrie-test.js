@@ -1,4 +1,3 @@
-require("locus");
 import { expect } from 'chai';
 import Node from '../lib/Node';
 import PrefixTrie from '../lib/PrefixTrie';

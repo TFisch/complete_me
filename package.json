@@ -1,7 +1,7 @@
 {
   "name": "@timfischer/complete-me",
   "version": "1.0.1",
-  "description": "foundation boilerplate",
+  "description": "complete-me",
   "main": "index.js",
   "directories": {
     "lib": "lib",
