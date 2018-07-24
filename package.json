@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "@timfischer/complete-me",
   "version": "1.0.0",
   "description": "foundation boilerplate",
   "main": "index.js",
@@ -30,5 +30,13 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TFisch/complete_me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TFisch/complete_me/issues"
+  },
+  "homepage": "https://github.com/TFisch/complete_me#readme"
 }

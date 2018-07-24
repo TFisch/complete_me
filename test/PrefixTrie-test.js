@@ -4,7 +4,6 @@ import Node from '../lib/Node';
 import PrefixTrie from '../lib/PrefixTrie';
 import fs from 'fs';
 
-
 describe('Trie', () => {
   let trie;
 
@@ -50,7 +49,7 @@ describe('Trie', () => {
       expect(trie.rootNode.children.d.children).to.be.an('object');
       expect(trie.rootNode.children.d.children.o.children).to.be.an('object');
     });
-  
+
   });  
 
   describe('suggest', () => {
